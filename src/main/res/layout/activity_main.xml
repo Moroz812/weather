@@ -49,6 +49,40 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Ясно" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/todayWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ветер : " />
+
+            <TextView
+                android:id="@+id/todayRealFeel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REAL FEEL : " />
+
+            <TextView
+                android:id="@+id/todayPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Давление : " />
+
+            <TextView
+                android:id="@+id/todayHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Влажность : " />
+
         </LinearLayout>
 
         <TextView
@@ -57,8 +91,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginRight="32dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="90dp"
             android:text="Подробнее >" />
+
 
     </LinearLayout>
 
