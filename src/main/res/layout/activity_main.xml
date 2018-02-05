@@ -9,6 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -100,11 +101,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -112,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-                app:srcCompat="@android:drawable/presence_online" />
+                app:srcCompat="@android:drawable/presence_online" android:contentDescription="TODO"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -164,6 +167,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -222,6 +226,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
