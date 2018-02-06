@@ -18,7 +18,7 @@ public class Helper {
 
     }
 
-    public  String getHTTPDate (String urlString) {
+    public  String getHTTPData (String urlString) {
         try {
             URL url = new URL(urlString);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
