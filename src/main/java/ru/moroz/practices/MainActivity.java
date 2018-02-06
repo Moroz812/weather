@@ -178,14 +178,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             location.setText(String.format("%s,%s",openWeatherMap.getName(),openWeatherMap.getSys().getCountry()));
             //txtLastUpdate.setText(String.format("Last Updated: %s", Common.getDateNow()));
-            todayDescription.setText(String.format("%s",openWeatherMap.getWeatherList().get(0).getDescription()));
+            todayDescription.setText(String.format("%s",openWeatherMap.getWeather().get(0).getDescription()));
             todayHumidity.setText(String.format("%d%%",openWeatherMap.getMain().getHumidity()));
             //txtTime.setText(String.format("%s/%s",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise()),Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
             todayTemperature.setText(String.format("%.2f °C",openWeatherMap.getMain().getTemp()));
             todayPressure.setText(String.format(""));
             todayWind.setText(String.format(""));
             Picasso.with(MainActivity.this)
-                    .load(Common.getImage(openWeatherMap.getWeatherList().get(0).getIcon()))
+                    .load(Common.getImage(openWeatherMap.getWeather().get(0).getIcon()))
                     .into(imageView);
 
         }

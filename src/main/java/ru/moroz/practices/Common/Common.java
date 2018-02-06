@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class Common {
     public static String API_KEY = "340daad7e220c7f6f5d76389177e3111";
-    public static String API_LINK = "api.openweathermap.org/data/2.5/weather";
+    public static String API_LINK = "http://api.openweathermap.org/data/2.5/weather";
 
     @NonNull
     public static String apiRequest (String lat, String lng) {
