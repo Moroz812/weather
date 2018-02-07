@@ -28,12 +28,11 @@ import ru.moroz.practices.Model.OpenWeatherMap;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
-    TextView todayTemperature, location, todayDescription, todayWind, todayRealFeel, todayPressure, todayHumidity, more;
+    static double lat, lng;
+    TextView todayTemperature, location, todayDescription, todayWind, todayRealFeel, todayPressure, todayHumidity, txtLastUpdate, more;
     ImageView imageView;
-
     LocationManager locationManager;
     String provider;
-    static double lat, lng;
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
 
     int MY_PERMISSION = 0;
@@ -42,10 +41,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.easy_main);
 
         //Control
         location = (TextView) findViewById(R.id.location);
+        txtLastUpdate = (TextView) findViewById(R.id.txtLastUpdate);
         todayWind = (TextView) findViewById(R.id.todayWind);
         todayRealFeel = (TextView) findViewById(R.id.todayRealFeel);
         todayPressure = (TextView) findViewById(R.id.todayPressure);
@@ -176,14 +176,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             openWeatherMap = gson.fromJson(s, mType);
             pd.dismiss();
 
-            location.setText(String.format("%s,%s",openWeatherMap.getName(),openWeatherMap.getSys().getCountry()));
-            //txtLastUpdate.setText(String.format("Last Updated: %s", Common.getDateNow()));
-            todayDescription.setText(String.format("%s",openWeatherMap.getWeather().get(0).getDescription()));
-            todayHumidity.setText(String.format("%d%%",openWeatherMap.getMain().getHumidity()));
+            location.setText(String.format("%s,%s", openWeatherMap.getName(), openWeatherMap.getSys().getCountry()));
+            txtLastUpdate.setText(String.format("Last Updated: %s", Common.getDateNow()));
+            todayDescription.setText(String.format("%s", openWeatherMap.getWeather().get(0).getDescription()));
+            todayHumidity.setText(String.format("Влажность : %d%%", openWeatherMap.getMain().getHumidity()));
             //txtTime.setText(String.format("%s/%s",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise()),Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
-            todayTemperature.setText(String.format("%.2f °C",openWeatherMap.getMain().getTemp()));
-            todayPressure.setText(String.format(""));
-            todayWind.setText(String.format(""));
+            todayTemperature.setText(String.format("%.2f °C", openWeatherMap.getMain().getTemp()));
+            todayPressure.setText(String.format("Давление : %s мбар", openWeatherMap.getMain().getPressure()));
+            todayWind.setText(String.format("Ветер : %s км/ч", openWeatherMap.getWind().getSpeed()));
             Picasso.with(MainActivity.this)
                     .load(Common.getImage(openWeatherMap.getWeather().get(0).getIcon()))
                     .into(imageView);
