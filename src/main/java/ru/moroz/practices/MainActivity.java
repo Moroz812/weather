@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             //txtTime.setText(String.format("%s/%s",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise()),Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
             todayTemperature.setText(String.format("%.2f °C", openWeatherMap.getMain().getTemp()));
             todayPressure.setText(String.format("Давление : %s мбар", openWeatherMap.getMain().getPressure()));
-            todayWind.setText(String.format("Ветер : %s км/ч", openWeatherMap.getWind().getSpeed()));
+            todayWind.setText(String.format("Ветер : %s м/с", openWeatherMap.getWind().getSpeed()));
             Picasso.with(MainActivity.this)
                     .load(Common.getImage(openWeatherMap.getWeather().get(0).getIcon()))
                     .into(imageView);
